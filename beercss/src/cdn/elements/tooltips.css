@@ -1,0 +1,79 @@
+.tooltip {
+  display: none;
+  background-color: rgb(0 0 0 / 0.9);
+  color: #FFF;
+  font-size: 0.75rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, -100%);
+  width: auto;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.tooltip.left {
+  left: 0;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-100%, -50%);
+}
+
+.tooltip.right {
+  right: 0;
+  top: 50%;
+  bottom: auto;
+  left: auto;
+  transform: translate(100%, -50%);
+}
+
+.tooltip.top {
+  top: 0;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, -100%);
+}
+
+.tooltip.bottom {
+  bottom: 0;
+  left: 50%;
+  top: auto;
+  right: auto;
+  transform: translate(-50%, 100%);
+}
+
+.tooltip.small {
+  width: 8rem;
+  white-space: normal;
+}
+
+.tooltip.medium {
+  width: 12rem;
+  white-space: normal;
+}
+
+.tooltip.large {
+  width: 16rem;
+  white-space: normal;
+}
+
+*:hover > .tooltip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdown:active ~ .tooltip,
+button:focus > .dropdown ~ .tooltip,
+.button:focus > .dropdown ~ .tooltip,
+.field > :focus ~ .dropdown ~ .tooltip {
+  display: none;
+}
